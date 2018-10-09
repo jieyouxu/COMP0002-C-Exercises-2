@@ -14,4 +14,6 @@ void printThirteenTimesTable(void) {
 
 int main(void) {
     printThirteenTimesTable();
+
+    return 0;
 }
