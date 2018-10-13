@@ -112,7 +112,7 @@ void calculateTrigPoints(Point_t* points, double (*trigFunction)(double)) {
     }
 }
 
-void offsetTrigPoints(Point_t* points) {
+void offsetAndScaleTrigPoints(Point_t* points) {
     for (int n = 0; n < TOTAL_POINTS; n++) {
         (*(points + n)).x *= X_SCALE_FACTOR;
         (*(points + n)).x += X_OFFSET;
@@ -123,7 +123,7 @@ void offsetTrigPoints(Point_t* points) {
 
 void calculateTrigCurve(Point_t* points, double (*trigFunction)(double)) {
     calculateTrigPoints(points, trigFunction);
-    offsetTrigPoints(points);
+    offsetAndScaleTrigPoints(points);
 }
 
 bool tangentIsUndefinedAt(int n) {
